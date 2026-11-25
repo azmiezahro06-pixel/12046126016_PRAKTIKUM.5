@@ -1,0 +1,36 @@
+/*
+ * Program  : Praktikum 5 - Kasus 3 (Tukar Nilai Dua Variabel)
+ * Nama     : Azmie Sakinatu Zahro
+ * NIM      : 12046126016
+ * kelas    : S1- Sistem Informasi
+ * Tanggal  : 25 November 2026
+ * Deskripsi: Fungsi dengan parameter poointer (pass by reference)
+ */
+
+#include <stdio.h>
+
+void tukar(int *a, int *b);
+
+int main() {
+    int angka_a, angka_b;
+
+    printf("=====   PROGRAM TUKAR NILAI   =====\n");
+    printf("Masukan angka A     : ");
+    scanf("%d", &angka_a);
+    printf("Masukan angka B     : ");
+    scanf("%d", &angka_b);
+
+    printf("\nSebelum tukar: A = %d, B = %d\n", angka_a, angka_b);
+
+    tukar(&angka_a, &angka_b);
+
+    printf("Setelah tukar   : A = %d, B = %d\n", angka_a, angka_b);
+    return 0;
+}
+
+void tukar (int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
